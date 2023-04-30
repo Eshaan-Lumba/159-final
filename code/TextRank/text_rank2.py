@@ -10,9 +10,12 @@ ps = PorterStemmer()
 
 def text_rank(sum_file, stop_file):
     threshold = 1.3
+    total = 0
 
     sumfile = open(sum_file,"r+", encoding="utf8")
     for line in sumfile: 
+        if total > 50:
+            break
         term_count = {}
         tf_table = {}
         tf_idf = {}
@@ -86,13 +89,15 @@ def text_rank(sum_file, stop_file):
         mean_score = mean(scores.values())
 
         print_string = ""
-        for sentence in sentences_clean:
-            sentence_tokens=[words for words in sentence.split(' ') if (words not in stop)]
+        for sentence in sentences:
+            sentence_clean = re.sub(r'[^\w\s]','',sentence.lower())
+            sentence_tokens=[words for words in sentence_clean.split(' ') if (words not in stop)]
             sent_str = ' '.join([str(elem) for elem in sentence_tokens])
-            if scores[sent_str] > (mean_score):
+            if scores[sent_str] > (mean_score * threshold):
                 print_string += " " + sentence + "."
         #tf_idf --> each sentence is key in dictionary, represented by vector of words w tf-idf 
-        #print(print_string)
+        print(print_string)
+        total +=1
 
 def main():
     #sumfile, stopfile
