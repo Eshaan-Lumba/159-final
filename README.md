@@ -1,8 +1,6 @@
-# 159 Final Project
+# 159 Final Project: Investigating methods of text summarization on news articles and scientific papers
 
-## Investigating methods of text summarization on news articles and scientific papers
-
-### Priya Dixit, Nate Getachew, Claire LeBlanc, Eshaan Lumba, Nick Morganstein
+Priya Dixit, Nate Getachew, Claire LeBlanc, Eshaan Lumba, Nick Morganstein
 
 This github contains:
 - TextRank Code
