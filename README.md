@@ -8,4 +8,4 @@ This github contains:
 - Evaluation Code
 - Original articles
 - Generated summaries
-- Referencne summaries (used to evaluate generated summaries)
+- Reference summaries (used to evaluate generated summaries)
